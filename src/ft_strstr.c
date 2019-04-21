@@ -25,10 +25,10 @@ char	*ft_strstr(const char *haystack, const char *needle)
 		count = 0;
 		while (needle[count] == haystack[result + count]
 				&& haystack[result + count] != '\0')
-			count = count + 1;
+			count++;
 		if (needle[count] == '\0')
 			return ((char *)&haystack[result]);
-		result = result + 1;
+		result++;
 	}
 	return (NULL);
 }
