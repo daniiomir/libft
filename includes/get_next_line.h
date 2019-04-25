@@ -5,30 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: swarner <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/21 21:06:53 by swarner           #+#    #+#             */
-/*   Updated: 2019/04/21 21:06:58 by swarner          ###   ########.fr       */
+/*   Created: 2019/04/19 20:20:39 by swarner           #+#    #+#             */
+/*   Updated: 2019/04/19 20:20:41 by swarner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
+
 # define GET_NEXT_LINE_H
 
-# define BUFF_SIZE 10000
+# define BUFF_SIZE 1
 
-typedef struct	s_file
-{
-	int				len;
-	char			*buf;
-	char			*start;
-	char			*end;
-}				t_file;
+# include "libft.h"
 
-typedef struct	s_vector
-{
-	t_file	**array;
-	int		size;
-}				t_vector;
-
-int				get_next_line(const int fd, char **line);
+int		get_next_line(const int fd, char **line);
 
 #endif
