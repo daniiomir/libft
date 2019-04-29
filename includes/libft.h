@@ -87,5 +87,6 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char				*ft_rejoin(char *s1, char const *s2);
 void				ft_lsthead_del(t_list **head);
 void				ft_lstadd_end(t_list **val_list, t_list *new);
+void				ft_addnode(t_list **val_list, char *buffer);
 
 #endif

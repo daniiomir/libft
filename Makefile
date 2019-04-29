@@ -73,7 +73,8 @@ SRCS = 	src/ft_strlen.c \
 		src/ft_strjoin_free.c \
 		src/get_next_line.c \
 		src/ft_lsthead_del.c \
-		src/ft_lstadd_end.c
+		src/ft_lstadd_end.c \
+		src/ft_addnode.c
 
 FLAGS = -Wall -Wextra -Werror -c
 HEADERS = ./includes
