@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_dlistadd_end.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: swarner <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/19 20:20:39 by swarner           #+#    #+#             */
-/*   Updated: 2019/04/19 20:20:41 by swarner          ###   ########.fr       */
+/*   Created: 2019/05/10 15:05:39 by swarner           #+#    #+#             */
+/*   Updated: 2019/05/10 15:05:43 by swarner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
+#include "libft.h"
 
-# define GET_NEXT_LINE_H
+void	ft_dlistadd_end(t_dlist **val_list, t_dlist *new)
+{
+	t_dlist *current;
 
-# define BUFF_SIZE 1
-
-# include "libft.h"
-
-int		get_next_line(const int fd, char **line);
-
-#endif
+	current = *val_list;
+	while (current->next != NULL)
+		current = current->next;
+	current->next = new;
+	new->prev = current;
+}

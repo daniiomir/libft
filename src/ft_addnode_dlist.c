@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_addnode.c                                       :+:      :+:    :+:   */
+/*   ft_addnode_dlist.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: swarner <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/30 01:08:59 by swarner           #+#    #+#             */
-/*   Updated: 2019/04/30 01:09:01 by swarner          ###   ########.fr       */
+/*   Created: 2019/05/10 15:07:55 by swarner           #+#    #+#             */
+/*   Updated: 2019/05/10 15:07:57 by swarner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_addnode(t_list **val_list, char *buffer, int size)
+void	ft_addnode_dlist(t_dlist **val_list, char *buffer, int size)
 {
-	t_list	*new;
+	t_dlist	*new;
 
-	new = (t_list *)malloc(sizeof(t_list));
+	new = (t_dlist *)malloc(sizeof(t_dlist));
 	new->content = ft_strdup(buffer);
 	new->content_size = size;
 	new->next = NULL;
-	ft_lstadd_end(val_list, new);
+	new->prev = NULL;
+	ft_dlistadd_end(val_list, new);
 	ft_strclr(buffer);
 }

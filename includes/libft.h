@@ -12,6 +12,7 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define BUFF_SIZE 1
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -23,6 +24,14 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_double_linked_list
+{
+	void						*content;
+	size_t						content_size;
+	struct s_double_linked_list	*next;
+	struct s_double_linked_list	*prev;
+}					t_dlist;
 
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
@@ -85,8 +94,15 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char				*ft_rejoin(char *s1, char const *s2);
+int					get_next_line(const int fd, char **line);
 void				ft_lsthead_del(t_list **head);
 void				ft_lstadd_end(t_list **val_list, t_list *new);
-void				ft_addnode(t_list **val_list, char *buffer);
+void				ft_addnode(t_list **val_list, char *buffer, int size);
+
+void				ft_addnode_dlist(t_dlist **val_list, char *buffer,
+	int size);
+void				ft_dlisthead_del(t_dlist **head);
+void				ft_dlistadd_end(t_dlist **val_list, t_dlist *new);
+t_dlist				*ft_dlist_new(void const *content, size_t content_size);
 
 #endif

@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_addnode.c                                       :+:      :+:    :+:   */
+/*   ft_dlist_new.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: swarner <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/30 01:08:59 by swarner           #+#    #+#             */
-/*   Updated: 2019/04/30 01:09:01 by swarner          ###   ########.fr       */
+/*   Created: 2019/05/10 15:18:19 by swarner           #+#    #+#             */
+/*   Updated: 2019/05/10 15:18:21 by swarner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_addnode(t_list **val_list, char *buffer, int size)
+t_dlist		*ft_dlist_new(void const *content, size_t content_size)
 {
-	t_list	*new;
+	t_dlist	*new;
 
-	new = (t_list *)malloc(sizeof(t_list));
-	new->content = ft_strdup(buffer);
-	new->content_size = size;
+	if (!(new = (t_dlist *)malloc(sizeof(t_dlist))))
+		return (NULL);
+	if (!(new->content = malloc(content_size)))
+	{
+		free(new);
+		return (NULL);
+	}
+	if (!content || !content_size)
+	{
+		new->content = NULL;
+		new->content_size = 0;
+	}
+	else
+	{
+		ft_memcpy(new->content, content, content_size);
+		new->content_size = content_size;
+	}
 	new->next = NULL;
-	ft_lstadd_end(val_list, new);
-	ft_strclr(buffer);
+	new->prev = NULL;
+	return (new);
 }
