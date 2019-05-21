@@ -78,7 +78,9 @@ SRCS = 	src/ft_strlen.c \
 		src/ft_addnode_dlist.c \
 		src/ft_dlisthead_del.c \
 		src/ft_dlistadd_end.c \
-		src/ft_dlist_new.c
+		src/ft_dlist_new.c \
+		src/ft_free_dlist.c \
+		src/ft_free_list.c
 
 FLAGS = -Wall -Wextra -Werror -c
 HEADERS = ./includes
