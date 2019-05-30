@@ -80,7 +80,10 @@ SRCS = 	src/ft_strlen.c \
 		src/ft_dlistadd_end.c \
 		src/ft_dlist_new.c \
 		src/ft_free_dlist.c \
-		src/ft_free_list.c
+		src/ft_free_list.c \
+		src/ft_abs.c \
+		src/ft_itoa_base.c \
+		src/ft_unsigned_itoa.c
 
 FLAGS = -Wall -Wextra -Werror -c
 HEADERS = ./includes
