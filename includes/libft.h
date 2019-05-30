@@ -109,5 +109,7 @@ void				ft_free_list(t_list *list);
 char				*ft_unsigned_itoa(unsigned int n);
 char				*ft_itoa_base(int value, int base);
 int					ft_abs(int nb);
+char				*ft_strlower(char *string);
+char				*ft_strupper(char *string);
 
 #endif

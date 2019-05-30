@@ -83,7 +83,9 @@ SRCS = 	src/ft_strlen.c \
 		src/ft_free_list.c \
 		src/ft_abs.c \
 		src/ft_itoa_base.c \
-		src/ft_unsigned_itoa.c
+		src/ft_unsigned_itoa.c \
+		src/ft_strlower.c \
+		src/ft_strupper.c
 
 FLAGS = -Wall -Wextra -Werror -c
 HEADERS = ./includes
