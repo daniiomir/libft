@@ -12,11 +12,12 @@
 
 #include "libft.h"
 
-static void	ft_itoa_helper(int tmp, int base, int size, int flag)
+static int	ft_itoa_helper(int tmp, int base, int size, int flag)
 {
 	while (tmp /= base)
 		size++;
 	size = size + flag + 1;
+	return (size);
 }
 
 char		*ft_itoa_base(int value, int base)
@@ -35,7 +36,7 @@ char		*ft_itoa_base(int value, int base)
 	if (value < 0 && base == 10)
 		flag = 1;
 	tmp = value;
-	ft_itoa_helper(tmp, base, size, flag);
+	size = ft_itoa_helper(tmp, base, size, flag);
 	str = ft_strnew(size);
 	if (flag == 1)
 		str[0] = '-';
