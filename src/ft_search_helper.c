@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_search_helper.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: swarner <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/09 21:00:55 by swarner           #+#    #+#             */
-/*   Updated: 2019/04/09 21:00:57 by swarner          ###   ########.fr       */
+/*   Created: 2019/08/13 16:52:28 by swarner           #+#    #+#             */
+/*   Updated: 2019/08/13 16:52:33 by swarner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(long long int n)
+int		ft_search_helper(const char *string, char search)
 {
-	long long int		size;
-	long long int		negative;
-	long long int		tmp;
-	char				*array;
+	size_t	j;
 
-	tmp = n;
-	size = 1;
-	negative = 0;
-	if (n < 0)
-		negative = 1;
-	while ((tmp /= 10))
-		size++;
-	array = ft_strnew(size + negative);
-	if (array == NULL)
-		return (NULL);
-	if (negative)
-		array[0] = '-';
-	while (size--)
+	j = 0;
+	while (string[j])
 	{
-		array[size + negative] = (negative ? -(n % 10) : (n % 10)) + '0';
-		n /= 10;
+		if (string[j] == search)
+			return (1);
+		j++;
 	}
-	return (array);
+	return (0);
 }

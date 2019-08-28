@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin_free2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: swarner <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 21:34:23 by swarner           #+#    #+#             */
-/*   Updated: 2019/04/08 21:34:24 by swarner          ###   ########.fr       */
+/*   Created: 2019/08/13 16:32:52 by swarner           #+#    #+#             */
+/*   Updated: 2019/08/13 16:32:56 by swarner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin_free2(char *s1, char *s2)
 {
-	size_t	i;
-	char	*for_malloc;
+	char	*result;
 
-	i = 0;
-	if (!s || len + 1 <= 0 || start + 1 <= 0)
-		return (NULL);
-	for_malloc = ft_strnew(len);
-	if (for_malloc == NULL)
-		return (NULL);
-	while (i < len && (char)s[start] != '\0')
-		for_malloc[i++] = (char)s[start++];
-	for_malloc[i] = '\0';
-	return (for_malloc);
+	if (!s2)
+		return (s1);
+	result = ft_strjoin(s1, s2);
+	free(s2);
+	return (result);
 }

@@ -35,7 +35,7 @@ typedef struct		s_double_linked_list
 
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
-int					ft_atoi(const char *str);
+ssize_t				ft_atoi(const char *str);
 char				*ft_strdup(const char *s1);
 size_t				ft_strlen(const char *s);
 char				*ft_strcpy(char *dst, const char *src);
@@ -85,7 +85,7 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strjoin_free(char *s1, char *s2);
 char				*ft_strtrim(char const *s);
-char				*ft_itoa(int n);
+char				*ft_itoa(long long int n);
 char				**ft_strsplit(char const *s, char c);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstadd(t_list **alst, t_list *new);
@@ -106,10 +106,13 @@ void				ft_dlistadd_end(t_dlist **val_list, t_dlist *new);
 t_dlist				*ft_dlist_new(void const *content, size_t content_size);
 void				ft_free_dlist(t_dlist *list);
 void				ft_free_list(t_list *list);
-char				*ft_unsigned_itoa(unsigned int n);
-char				*ft_itoa_base(int value, int base);
+char				*ft_itoa_base(unsigned long long int value, int base);
 int					ft_abs(int nb);
 char				*ft_strlower(char *string);
 char				*ft_strupper(char *string);
+char				*ft_strjoin_free2(char *s1, char *s2);
+char				*ft_strjoin_free_all(char *s1, char *s2);
+int					ft_search_helper(const char *string, char search);
+void				ft_strset(char *string, size_t len, char c);
 
 #endif

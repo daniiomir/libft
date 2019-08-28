@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_strset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: swarner <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 21:34:23 by swarner           #+#    #+#             */
-/*   Updated: 2019/04/08 21:34:24 by swarner          ###   ########.fr       */
+/*   Created: 2019/08/13 16:57:16 by swarner           #+#    #+#             */
+/*   Updated: 2019/08/13 16:57:21 by swarner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+void	ft_strset(char *string, size_t len, char c)
 {
 	size_t	i;
-	char	*for_malloc;
 
 	i = 0;
-	if (!s || len + 1 <= 0 || start + 1 <= 0)
-		return (NULL);
-	for_malloc = ft_strnew(len);
-	if (for_malloc == NULL)
-		return (NULL);
-	while (i < len && (char)s[start] != '\0')
-		for_malloc[i++] = (char)s[start++];
-	for_malloc[i] = '\0';
-	return (for_malloc);
+	while (i != len)
+		string[i++] = c;
 }
